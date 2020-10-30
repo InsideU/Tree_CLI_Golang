@@ -10,7 +10,12 @@ import (
 func tree(root string) error {
   //fmt.Println(path);
   err:=filepath.Walk(root,func(path string, fi os.FileInfo, err error) error {
-    if(err!=nil) {return err};
+    if(err!=nil) {
+      return err;
+    }
+    if fi.Name()[0]=='.'{
+      return filepath.SkipDir
+    }
       fmt.Println(fi.Name());
       return nil;
   })
