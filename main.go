@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 )
-
+// This tree function is not required it could be deleted for better view and redablity of the code
 func tree(root string) error {
 	//fmt.Println(path);
 	err := filepath.Walk(root, func(path string, fi os.FileInfo, err error) error {
